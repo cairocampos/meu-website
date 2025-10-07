@@ -8,6 +8,8 @@ Projeto iniciado manualmente com [Next.js](https://nextjs.org/) utilizando TypeS
 - `npm run build` – gera a build de produção.
 - `npm run start` – executa a build em modo produção.
 - `npm run lint` – roda o ESLint com as regras recomendadas pelo Next.js.
+- `npm run db:generate` – gera migrações do Drizzle ORM com base no schema atual.
+- `npm run db:push` – aplica o schema definido no Drizzle diretamente no banco configurado.
 
 ## Estrutura
 
@@ -25,3 +27,9 @@ pnpm install
 # ou
 yarn install
 ```
+
+## Banco de dados com Drizzle ORM
+
+- Configure a string de conexão PostgreSQL no arquivo `.env` utilizando a referência do `.env.example`.
+- O schema principal está em `src/db/schema.ts` e a conexão compartilhada no módulo `src/db/client.ts`.
+- Utilize os scripts `npm run db:generate` e `npm run db:push` para gerenciar migrações com o Drizzle Kit.
